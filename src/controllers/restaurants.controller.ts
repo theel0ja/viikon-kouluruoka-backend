@@ -9,7 +9,8 @@ const router: Router = Router();
 
 function handleRestaurantData(data: IAromiRestaurant): IRestaurantOutput {
   const restaurant: IRestaurantOutput = {
-    id: 1,
+    id: data.RestaurantId,
+    category: data.CategoryId,
     name: data.Name,
     /* location: {
       lat: 60,

@@ -2,9 +2,14 @@ import { ILocation } from "./ILocation";
 
 interface IRestaurantOutput {
   /**
-   * Id of the restaurant
+   * UUID of the restaurant
    */
-  id: number;
+  id: string;
+
+  /**
+   * UUID of the category
+   */
+  category: string;
 
   /**
    * Name of the restaurant
