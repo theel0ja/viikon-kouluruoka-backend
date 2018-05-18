@@ -1,5 +1,3 @@
-import { ILocation } from "./ILocation";
-
 interface IAromiRestaurant {
   RestaurantId: string;
   Name: string;
