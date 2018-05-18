@@ -3,6 +3,9 @@ import { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
+/**
+ * List all restaurants.
+ */
 router.get("/", (req: Request, res: Response) => {
   const data: IRestaurantOutput[] = [
     {
