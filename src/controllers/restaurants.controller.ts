@@ -6,6 +6,19 @@ import { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
+function handleRestaurantData(restaurant): IRestaurantOutput {
+  const data: IRestaurantOutput = {
+    id: 1,
+    name: "Foo",
+    location: {
+      lat: 60,
+      lng: 22,
+    },
+  };
+
+  return data;
+}
+
 /**
  * List all restaurants.
  */
@@ -16,7 +29,15 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
   axios.get(AROMI_MENUS_JSON_DATA_URL)
     .then((response) => response.data.Restaurants)
     .then((data) => {
-      res.json(data);
+      const restaurants: IRestaurantOutput[] = [];
+
+      data.forEach((restaurant) => {
+        const newData: IRestaurantOutput = handleRestaurantData(restaurant);
+
+        restaurants.push(newData);
+      });
+
+      res.json(restaurants);
     })
     .catch(next);
 
