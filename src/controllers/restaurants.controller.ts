@@ -40,19 +40,6 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
       res.json(restaurants);
     })
     .catch(next);
-
-  /* const data: IRestaurantOutput[] = [
-    {
-      id: 1,
-      name: "Lorem ipsum",
-      location: {
-        lat: 60.451813,
-        lng: 22.266630,
-      },
-    },
-  ];
-
-  res.json(data); */
 });
 
 export const RestaurantController: Router = router;
