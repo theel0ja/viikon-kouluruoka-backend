@@ -10,8 +10,12 @@
     "start": "nodemon"
   },
   "devDependencies": {
+    "@types/node-fetch": "^1.6.9",
     "nodemon": "^1.17.4",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.2"
   }
 }
