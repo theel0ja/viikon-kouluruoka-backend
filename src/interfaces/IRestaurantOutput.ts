@@ -17,4 +17,4 @@ interface IRestaurantOutput {
   location: ILocation;
 }
 
-export default IRestaurantOutput;
+export { IRestaurantOutput };

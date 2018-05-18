@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import IRestaurantOutput, { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
+import { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
