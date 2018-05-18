@@ -6,6 +6,7 @@ import { RestaurantController } from "./controllers";
 
 // Create a new express application instance
 const app: express.Application = express();
+app.disable("x-powered-by");
 
 // The port the express app will listen on
 const port: (string | number) = process.env.PORT || 3000;
