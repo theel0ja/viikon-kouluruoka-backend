@@ -16,5 +16,7 @@ app.use("/restaurants", WelcomeController);
 // Serve the application at the given port
 app.listen(port, () => {
   // Success callback
+
+  // tslint:disable-next-line:no-console
   console.log(`Listening at http://localhost:${port}/`);
 });
