@@ -2,7 +2,7 @@
 import express from "express";
 
 // Import RestaurantController from controllers entry point
-import { RestaurantController } from "./controllers";
+import { RestaurantController, CategoryController } from "./controllers";
 
 // Create a new express application instance
 const app: express.Application = express();
@@ -11,8 +11,9 @@ app.disable("x-powered-by");
 // The port the express app will listen on
 const port: (string | number) = process.env.PORT || 3000;
 
-// Mount the WelcomeController at the /welcome route
+// Mount the RestaurantController at the /restaurants route
 app.use("/restaurants", RestaurantController);
+app.use("/categories", CategoryController);
 
 // Serve the application at the given port
 app.listen(port, () => {
