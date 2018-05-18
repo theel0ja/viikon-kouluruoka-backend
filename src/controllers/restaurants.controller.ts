@@ -1,12 +1,21 @@
 import { Router, Request, Response } from "express";
+import IRestaurantOutput, { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  // Reply with a hello world when no name param is provided
-  res.json({
-    "restaurants": "foo"
-  });
+router.get("/", (req: Request, res: Response) => {
+  const data: IRestaurantOutput[] = [
+    {
+      id: 1,
+      name: "Lorem ipsum",
+      location: {
+        lat: 60.451813,
+        lng: 22.266630,
+      },
+    },
+  ];
+
+  res.json(data);
 });
 
 export const WelcomeController: Router = router;
