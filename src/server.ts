@@ -2,7 +2,7 @@
 import express from "express";
 
 // Import RestaurantController from controllers entry point
-import { RestaurantController, CategoryController } from "./controllers";
+import { CategoryController, RestaurantController } from "./controllers";
 
 // Create a new express application instance
 const app: express.Application = express();
