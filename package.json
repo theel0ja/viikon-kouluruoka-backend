@@ -1,0 +1,17 @@
+{
+  "name": "@theel0ja/viikon-kouluruoka-backend",
+  "version": "0.1.0",
+  "description": "Viikon kouluruoka backend",
+  "main": "src/index.ts",
+  "repository": "https://github.com/theel0ja/viikon-kouluruoka-backend.git",
+  "author": "Elias Ojala",
+  "private": true,
+  "scripts": {
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  }
+}
