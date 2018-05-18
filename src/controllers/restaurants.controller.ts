@@ -2,21 +2,22 @@ import axios from "axios";
 import { NextFunction, Request, Response, Router } from "express";
 import { AROMI_MENUS_JSON_DATA_URL } from "../settings";
 
+import { IAromiRestaurant } from "../interfaces/IAromiRestaurant";
 import { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
-function handleRestaurantData(restaurant): IRestaurantOutput {
-  const data: IRestaurantOutput = {
+function handleRestaurantData(data: IAromiRestaurant): IRestaurantOutput {
+  const restaurant: IRestaurantOutput = {
     id: 1,
-    name: "Foo",
-    location: {
+    name: data.Name,
+    /* location: {
       lat: 60,
       lng: 22,
-    },
+    }, */
   };
 
-  return data;
+  return restaurant;
 }
 
 /**
@@ -31,7 +32,7 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
     .then((data) => {
       const restaurants: IRestaurantOutput[] = [];
 
-      data.forEach((restaurant) => {
+      data.forEach((restaurant: IAromiRestaurant) => {
         const newData: IRestaurantOutput = handleRestaurantData(restaurant);
 
         restaurants.push(newData);

@@ -14,7 +14,7 @@ interface IRestaurantOutput {
   /**
    * Location of the restaurant as ILocation
    */
-  location: ILocation;
+  location?: ILocation;
 }
 
 export { IRestaurantOutput };
