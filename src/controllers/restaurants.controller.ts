@@ -18,4 +18,4 @@ router.get("/", (req: Request, res: Response) => {
   res.json(data);
 });
 
-export const WelcomeController: Router = router;
+export const RestaurantController: Router = router;
