@@ -1,0 +1,1 @@
+web: npm build && node dist/index.js
