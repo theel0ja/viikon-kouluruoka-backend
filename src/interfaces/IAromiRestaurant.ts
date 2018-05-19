@@ -8,7 +8,13 @@ interface IAromiRestaurant {
   ShowNutrition: boolean;
   ShowTwoWeeksMenu: boolean;
   ShowThreeWeeksMenu: boolean;
-  JMenus: any;
+  // FIXME: Test JMenus array
+  JMenus:  Array<{
+    MenuId: string;
+    Start: string;
+    End: string;
+    LinkUrl: string;
+  }>;
   Languages: any;
 }
 

@@ -20,6 +20,13 @@ interface IRestaurantOutput {
    * Location of the restaurant as ILocation
    */
   location?: ILocation;
+
+  menus?: Array<{
+    id: any;
+
+    startDate: string;
+    endDate: string;
+  }>;
 }
 
 export { IRestaurantOutput };

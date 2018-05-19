@@ -12,6 +12,14 @@ function handleData(data: IAromiRestaurant): IRestaurantOutput {
     id: data.RestaurantId,
     category: data.CategoryId,
     name: data.Name,
+    /* menus: [
+      {
+        id: "fooId",
+        // id: data.JMenus[0],
+        startDate: "foo",
+        endDate: "foobar",
+      },
+    ], */
     /* location: {
       lat: 60,
       lng: 22,
