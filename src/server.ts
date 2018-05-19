@@ -3,7 +3,7 @@ import express from "express";
 import Raven from "raven";
 
 // Import RestaurantController from controllers entry point
-import { CategoryController, RestaurantController } from "./controllers";
+import { CategoryController, RestaurantController, MenuController } from "./controllers";
 
 if (process.env.NODE_ENV === "production") {
   Raven.config("https://fd3c65ae8bde436ca0b32183a6099b44@sentry.io/1209758").install();
@@ -19,6 +19,7 @@ const port: (string | number) = process.env.PORT || 3000;
 // Mount the RestaurantController at the /restaurants route
 app.use("/restaurants", RestaurantController);
 app.use("/categories", CategoryController);
+app.use("/menus", MenuController);
 
 // Serve the application at the given port
 app.listen(port, () => {
