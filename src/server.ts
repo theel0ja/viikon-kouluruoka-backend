@@ -3,7 +3,7 @@ import express from "express";
 import Raven from "raven";
 
 // Import RestaurantController from controllers entry point
-import { CategoryController, RestaurantController, MenuController } from "./controllers";
+import { CategoryController, MenuController, RestaurantController } from "./controllers";
 
 if (process.env.NODE_ENV === "production") {
   Raven.config("https://fd3c65ae8bde436ca0b32183a6099b44@sentry.io/1209758").install();
