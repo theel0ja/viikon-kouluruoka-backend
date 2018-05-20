@@ -1,5 +1,6 @@
 import axios from "axios";
 import { NextFunction, Request, Response, Router } from "express";
+import { IAromiMenu } from "../interfaces/IAromiMenu";
 import { IMenuOutput } from "../interfaces/IMenuOutput";
 import { AROMI_MENU_URL_PREFIX } from "../settings";
 
@@ -17,40 +18,34 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
    */
   axios.get(AROMI_MENU_URL_PREFIX + id)
     .then((response) => response.data)
-    .then((data) => {
+    .then((data: IAromiMenu) => {
+      const days: IMenuOutput["days"] = [];
+
+      data.Days.forEach((oldData) => {
+        const meals: IMenuOutput["days"][0]["meals"] = [];
+
+        oldData.Meals.forEach((oldMealData) => {
+          const newMealData = {
+            type: oldMealData.MealType,
+            description: oldMealData.Name,
+          };
+
+          meals.push(newMealData);
+        });
+
+        const newData: IMenuOutput["days"][0] = {
+          dateAsText: `${oldData.WeekDay} ${oldData.DateStr}`,
+          meals,
+        };
+        days.push(newData);
+      });
+
       const menu: IMenuOutput = {
         id,
-        name: "Week 21",
-        startDate: "startDateAsUnixTimeStamp",
-        endDate: "endDateAsUnixTimeStamp",
-        days: [
-          {
-            dateAsText: "Monday 21/05/2018",
-            meals: [
-              {
-                type: "Breakfast",
-                description: "Porridge, juice",
-              },
-              {
-                type: "Lunch",
-                description: "Fish soup",
-              },
-            ],
-          },
-          {
-            dateAsText: "Tuesday 22/05/2018",
-            meals: [
-              {
-                type: "Breakfast",
-                description: "Porridge, juice",
-              },
-              {
-                type: "Lunch",
-                description: "Fish soup",
-              },
-            ],
-          },
-        ],
+        name: data.Name,
+        startDate: data.Start, // FIXME: Convert
+        endDate: data.End, // FIXME: Convert
+        days,
       };
 
       res.jsonp(menu);
