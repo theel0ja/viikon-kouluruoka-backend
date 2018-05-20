@@ -1,4 +1,6 @@
 interface IMenuOutput {
+  id: string; // Because of JSONP
+
   name: string; // Such as "Week 21"
 
   startDate: string;

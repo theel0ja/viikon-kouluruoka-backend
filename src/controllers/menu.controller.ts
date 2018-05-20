@@ -19,6 +19,7 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
     .then((response) => response.data)
     .then((data) => {
       const menu: IMenuOutput = {
+        id,
         name: "Week 21",
         startDate: "startDateAsUnixTimeStamp",
         endDate: "endDateAsUnixTimeStamp",
