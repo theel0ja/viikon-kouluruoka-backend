@@ -1,4 +1,5 @@
 import { ILocation } from "./ILocation";
+import { IMenuListOutput } from "./IMenuListOutput";
 
 interface IRestaurantOutput {
   /**
@@ -21,12 +22,7 @@ interface IRestaurantOutput {
    */
   location?: ILocation;
 
-  menus?: Array<{
-    id: any;
-
-    startDate: string;
-    endDate: string;
-  }>;
+  menus: IMenuListOutput[];
 }
 
 export { IRestaurantOutput };

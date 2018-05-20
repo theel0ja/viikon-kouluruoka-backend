@@ -3,23 +3,29 @@ import { NextFunction, Request, Response, Router } from "express";
 import { AROMI_JSON_DATA_URL } from "../settings";
 
 import { IAromiRestaurant } from "../interfaces/IAromiRestaurant";
+import { IMenuListOutput } from "../interfaces/IMenuListOutput";
 import { IRestaurantOutput } from "../interfaces/IRestaurantOutput";
 
 const router: Router = Router();
 
 function handleData(data: IAromiRestaurant): IRestaurantOutput {
+  const menus: IMenuListOutput[] = [];
+
+  data.JMenus.forEach((oldData) => {
+    const newData: IMenuListOutput = {
+      id: oldData.MenuId,
+      startDate: oldData.Start,
+      endDate: oldData.End,
+    };
+
+    menus.push(newData);
+  });
+
   const restaurant: IRestaurantOutput = {
     id: data.RestaurantId,
     category: data.CategoryId,
     name: data.Name,
-    /* menus: [
-      {
-        id: "fooId",
-        // id: data.JMenus[0],
-        startDate: "foo",
-        endDate: "foobar",
-      },
-    ], */
+    menus,
     /* location: {
       lat: 60,
       lng: 22,
