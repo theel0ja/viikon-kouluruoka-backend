@@ -53,7 +53,7 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
         restaurants.push(newData);
       });
 
-      res.json(restaurants);
+      res.jsonp(restaurants);
     })
     .catch(next);
 });

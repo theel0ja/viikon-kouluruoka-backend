@@ -34,7 +34,7 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
         categories.push(newData);
       });
 
-      res.json(categories);
+      res.jsonp(categories);
     })
     .catch(next);
 });

@@ -52,7 +52,7 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
         ],
       };
 
-      res.json(menu);
+      res.jsonp(menu);
     })
     .catch(next);
 });
