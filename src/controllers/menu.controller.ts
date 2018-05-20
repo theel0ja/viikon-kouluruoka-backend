@@ -30,6 +30,10 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
                 type: "Breakfast",
                 description: "Porridge, juice",
               },
+              {
+                type: "Lunch",
+                description: "Fish soup",
+              },
             ],
           },
           {
@@ -38,6 +42,10 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
               {
                 type: "Breakfast",
                 description: "Porridge, juice",
+              },
+              {
+                type: "Lunch",
+                description: "Fish soup",
               },
             ],
           },
