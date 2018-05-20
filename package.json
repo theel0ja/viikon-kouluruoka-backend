@@ -10,18 +10,19 @@
     "start": "nodemon",
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "start-prod": "node dist/server.js"
   },
   "devDependencies": {
     "@types/express": "^4.11.1",
     "@types/raven": "^2.5.1",
     "nodemon": "^1.17.4",
-    "ts-node": "^6.0.3",
-    "typescript": "^2.8.3"
+    "ts-node": "^6.0.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3",
-    "raven": "^2.6.2"
+    "raven": "^2.6.2",
+    "typescript": "^2.8.3"
   }
 }
