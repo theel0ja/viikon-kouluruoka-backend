@@ -25,9 +25,9 @@ interface IAromiMenu {
         Name: string;
         Label: string;
         Items: any[];
-      };
+      }>;
     }>;
-  }>
+  }>;
   Translations: Array<{
     LanguageId: number;
     Value: string;
