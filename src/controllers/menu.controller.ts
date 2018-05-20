@@ -1,5 +1,6 @@
 import axios from "axios";
 import { NextFunction, Request, Response, Router } from "express";
+import { IMenuOutput } from "../interfaces/IMenuOutput";
 import { AROMI_MENU_URL_PREFIX } from "../settings";
 
 const router: Router = Router();
@@ -17,7 +18,33 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
   axios.get(AROMI_MENU_URL_PREFIX + id)
     .then((response) => response.data)
     .then((data) => {
-      res.json(data);
+      const menu: IMenuOutput = {
+        name: "Week 21",
+        startDate: "startDateAsUnixTimeStamp",
+        endDate: "endDateAsUnixTimeStamp",
+        days: [
+          {
+            dateAsText: "Monday 21/05/2018",
+            meals: [
+              {
+                type: "Breakfast",
+                description: "Porridge, juice",
+              },
+            ],
+          },
+          {
+            dateAsText: "Tuesday 22/05/2018",
+            meals: [
+              {
+                type: "Breakfast",
+                description: "Porridge, juice",
+              },
+            ],
+          },
+        ],
+      };
+
+      res.json(menu);
     })
     .catch(next);
 });
