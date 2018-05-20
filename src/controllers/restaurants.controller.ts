@@ -14,8 +14,8 @@ function handleData(data: IAromiRestaurant): IRestaurantOutput {
   data.JMenus.forEach((oldData) => {
     const newData: IMenuListOutput = {
       id: oldData.MenuId,
-      startDate: oldData.Start,
-      endDate: oldData.End,
+      startDate: oldData.Start, // Convert, now in EET/EEST!
+      endDate: oldData.End, // Convert, now in EET/EEST!
     };
 
     menus.push(newData);
