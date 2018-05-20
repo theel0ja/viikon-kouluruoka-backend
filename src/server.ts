@@ -2,6 +2,7 @@
 import express from "express";
 import sslRedirect from "heroku-ssl-redirect";
 import Raven from "raven";
+import lusca from "lusca";
 
 // Import RestaurantController from controllers entry point
 import { CategoryController, MenuController, RestaurantController } from "./controllers";
@@ -14,6 +15,9 @@ if (process.env.NODE_ENV === "production") {
 const app: express.Application = express();
 app.disable("x-powered-by");
 app.use(sslRedirect(["production"], 301)); // Heroku
+app.use(lusca.nosniff());
+
+app.use(lusca.hsts({maxAge: 31536000, includeSubDomains: false, preload: false}));
 
 // The port the express app will listen on
 const port: (string | number) = process.env.PORT || 3000;
