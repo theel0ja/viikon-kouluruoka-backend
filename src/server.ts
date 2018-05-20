@@ -1,6 +1,7 @@
 // Import everything from express and assign it to the express variable
 import express from "express";
 import Raven from "raven";
+import sslRedirect from "heroku-ssl-redirect";
 
 // Import RestaurantController from controllers entry point
 import { CategoryController, MenuController, RestaurantController } from "./controllers";
@@ -12,6 +13,7 @@ if (process.env.NODE_ENV === "production") {
 // Create a new express application instance
 const app: express.Application = express();
 app.disable("x-powered-by");
+app.use(sslRedirect(["production"], 301)); // Heroku
 
 // The port the express app will listen on
 const port: (string | number) = process.env.PORT || 3000;
