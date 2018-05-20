@@ -9,7 +9,7 @@ interface IAromiRestaurant {
   ShowTwoWeeksMenu: boolean;
   ShowThreeWeeksMenu: boolean;
   // FIXME: Test JMenus array
-  JMenus:  Array<{
+  JMenus: Array<{
     MenuId: string;
     Start: string;
     End: string;
