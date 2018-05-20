@@ -1,1 +1,1 @@
-web: npm build && node dist/index.js
+web: npm run-script build && node dist/server.js
