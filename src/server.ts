@@ -1,8 +1,8 @@
 // Import everything from express and assign it to the express variable
 import express from "express";
 import sslRedirect from "heroku-ssl-redirect";
-import Raven from "raven";
 import lusca from "lusca";
+import Raven from "raven";
 
 // Import RestaurantController from controllers entry point
 import { CategoryController, MenuController, RestaurantController } from "./controllers";
