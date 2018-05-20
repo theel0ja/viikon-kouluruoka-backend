@@ -1,5 +1,5 @@
 interface IMenuListOutput {
-  id: any;
+  id: string;
 
   startDate: string;
   endDate: string;
