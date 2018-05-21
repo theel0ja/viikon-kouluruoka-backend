@@ -1,7 +1,7 @@
 /**
  * Root of CGI's Aromi server.
  */
-const AROMI_ROOT_URL: string = "https://ruokalistatkoulutjapaivakodit.arkea.fi";
+const AROMI_ROOT_URL: string = process.env.AROMI_ROOT_URL; // Add dotenv (default: "https://ruokalistatkoulutjapaivakodit.arkea.fi")
 const AROMI_MENU_URL_PREFIX: string = AROMI_ROOT_URL + "/AromiStorage/blob/menu/";
 
 /**
