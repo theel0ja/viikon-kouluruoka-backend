@@ -1,6 +1,8 @@
 interface IMenuOutput {
   id: string; // Because of JSONP
 
+  selectedTab: boolean;
+
   name: string; // Such as "Week 21"
 
   startDate: string;

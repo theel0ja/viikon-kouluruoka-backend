@@ -42,6 +42,7 @@ router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
 
       const menu: IMenuOutput = {
         id,
+        selectedTab: data.Selected,
         name: data.Name,
         startDate: data.Start, // FIXME: Convert
         endDate: data.End, // FIXME: Convert
