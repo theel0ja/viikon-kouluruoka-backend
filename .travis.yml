@@ -1,10 +1,9 @@
 # Original code: https://github.com/theel0ja/Missing-Swedish-Roadnames-Finland/blob/cc0aed29fb6d54e37cddc51a484a18c172c934ed/.travis.yml
 language: node_js
+node_js:
+  - "8.5.0"
 
 sudo: false
-
-env:
-  - TRAVIS_NODE_VERSION="8.5.0"
 
 install:
   - yarn
