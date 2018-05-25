@@ -18,7 +18,8 @@
     "@types/lusca": "^1.5.0",
     "@types/raven": "^2.5.1",
     "nodemon": "^1.17.4",
-    "ts-node": "^6.0.3"
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
