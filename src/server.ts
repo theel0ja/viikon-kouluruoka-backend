@@ -1,11 +1,7 @@
-import compression from "compression";
 import app from "./app";
 
 // Disable X-Powered-By
 app.disable("x-powered-by");
-
-// Enable compression
-app.use(compression());
 
 // The port the express app will listen on
 const port: (string | number) = process.env.PORT || 3000;

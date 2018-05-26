@@ -1,4 +1,5 @@
 // Import everything from express and assign it to the express variable
+import compression from "compression";
 import dotenv from "dotenv";
 import express from "express";
 import sslRedirect from "heroku-ssl-redirect";
@@ -16,13 +17,15 @@ if (process.env.NODE_ENV === "production") {
 
 // Create a new express application instance
 const app: express.Application = express();
+
+// Enable compression
+app.use(compression());
+
 app.use(sslRedirect(["production"], 301)); // Heroku
 app.use(lusca.nosniff());
 
 app.use(lusca.hsts({maxAge: 31536000, includeSubDomains: false, preload: false}));
 
-// The port the express app will listen on
-const port: (string | number) = process.env.PORT || 3000;
 
 // Mount the RestaurantController at the /restaurants route
 app.use("/restaurants", RestaurantController);
