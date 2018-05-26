@@ -26,7 +26,6 @@ app.use(lusca.nosniff());
 
 app.use(lusca.hsts({maxAge: 31536000, includeSubDomains: false, preload: false}));
 
-
 // Mount the RestaurantController at the /restaurants route
 app.use("/restaurants", RestaurantController);
 app.use("/categories", CategoryController);
