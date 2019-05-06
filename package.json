@@ -11,7 +11,9 @@
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "start-prod": "node dist/server.js"
+    "start-prod": "node dist/server.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@types/compression": "^0.0.36",
@@ -31,6 +33,8 @@
     "heroku-ssl-redirect": "^0.0.4",
     "lusca": "^1.6.0",
     "raven": "^2.6.2",
-    "typescript": "^2.8.3"
-  }
+    "typescript": "^2.8.3",
+    "snyk": "^1.161.1"
+  },
+  "snyk": true
 }
